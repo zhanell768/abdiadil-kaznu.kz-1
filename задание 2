@@ -1,0 +1,45 @@
+public class User {
+    // Поля класса для хранения информации о пользователе
+    private String lastName;  // Фамилия
+    private String firstName; // Имя
+    private String middleName; // Отчество
+    private int birthYear;    // Год рождения
+    private String email;     // Email
+
+    // Конструктор класса для инициализации полей
+    public User(String lastName, String firstName, String middleName, int birthYear, String email) {
+        this.lastName = lastName;      // Инициализация поля фамилии
+        this.firstName = firstName;    // Инициализация поля имени
+        this.middleName = middleName;  // Инициализация поля отчества
+        this.birthYear = birthYear;    // Инициализация поля года рождения
+        this.email = email;            // Инициализация поля email
+    }
+
+    // Метод для получения полного имени
+    public String fullName() {
+        return lastName + " " + firstName + " " + middleName;
+    }
+
+    // Метод для вычисления возраста на основе текущего года
+    public int age(int currentYear) {
+        return currentYear - birthYear;
+    }
+
+    // Метод для получения информации о пользователе в строковом формате
+    public String info() {
+        return "Full Name: " + fullName() + ", Birth Year: " + birthYear + ", Email: " + email;
+    }
+
+    // Метод main для тестирования класса
+    public static void main(String[] args) {
+        // Создание объекта пользователя с заполнением полей через конструктор
+        User user1 = new User("Дуйсенбаева", "Шынарай", "Мураткызы", 2004, "duisenbaeva@example.com");
+
+        // Вывод полного имени
+        System.out.println(user1.fullName()); // Выводит: Дуйсенбаева Шынарай Мураткызы
+        // Вывод возраста
+        System.out.println(user1.age(2024)); // Выводит: 20 (если текущий год 2024)
+        // Вывод полной информации о пользователе
+        System.out.println(user1.info()); // Выводит полную информацию о пользователе
+    }
+}
