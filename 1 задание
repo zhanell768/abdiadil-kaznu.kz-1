@@ -1,0 +1,35 @@
+public class User {
+    private String lastName;
+    private String firstName;
+    private String middleName;
+    private int birthYear;
+    private String email;
+
+    public User(String lastName, String firstName, String middleName, int birthYear, String email) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.birthYear = birthYear;
+        this.email = email;
+    }
+
+    public String fullName() {
+        return lastName + " " + firstName + " " + middleName;
+    }
+
+    public int age(int currentYear) {
+        return currentYear - birthYear;
+    }
+
+    public String info() {
+        return "Full Name: " + fullName() + ", Birth Year: " + birthYear + ", Email: " + email;
+    }
+
+    public static void main(String[] args) {
+        User user1 = new User("Дуйсенбаева", "Шынарай", "Мураткызы", 2004, "shynarayduisenbayeva@gmail.com.com");
+
+        System.out.println(user1.fullName()); //
+        System.out.println(user1.age(2024));
+        System.out.println(user1.info()); //
+    }
+}
